@@ -10,17 +10,19 @@
 </head>
 <body>
 <table>
+    <h3>Products</h3>
+    <p>Request Time: @DateTime.Now.ToString("HH:mm:ss")</p>
     <thead>
     <tr><td>Name</td><td>Price</td></tr>
     </thead>
     <tbody>
-        @foreach (var product in Model)
-        {
-            <tr>
-                <td>@product.Name</td>
-                <td>@product.Price</td>
-            </tr>
-        }
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@($"{product.Price:C2}")</td>
+        </tr>
+    }
     </tbody>
 </table>
 </body>
